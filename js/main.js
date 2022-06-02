@@ -37,6 +37,7 @@ $(function () {
       next: '<i class="zmdi">Next</i>',
       finish: '<i class="zmdi zmdi-arrow-right"></i>',
       current: "",
+      loading: "loading",
     },
     onStepChanging: function (event, currentIndex, newIndex) {
       $("#form-register").validate().settings.ignore = ":disabled,:hidden";

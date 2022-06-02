@@ -819,7 +819,7 @@
         var previous = wizard.find(".actions a[href$='#previous']").parent();
         previous._enableAria(state.currentIndex > 0);
       }
-      loadShow();
+      //loadShow();
       if (options.enableFinishButton && options.showFinishButtonAlways) {
         finish._enableAria(state.stepCount > 0);
         next._enableAria(
@@ -1938,7 +1938,7 @@
      * @for defaults
      **/
     onStepChanging: function (event, currentIndex, newIndex) {
-      loadShow();
+      //loadShow();
       return true;
     },
 
@@ -1975,7 +1975,7 @@
             var state = document.getElementById("state").value;
             url.searchParams.append("state", state);
             url.searchParams.append("opco", opco);
-            loadShow();
+            //loadShow();
             fetch(url)
               .then((r) => r.json())
               .then(function (data) {
@@ -1986,10 +1986,10 @@
                   option.value = data[i];
                   x.add(option);
                 }
-                loadHide();
+                //loadHide();
               })
               .catch(function (e) {
-                loadHide();
+                //loadHide();
                 alert("No name found for selection");
               });
           }
@@ -2003,7 +2003,7 @@
             url.searchParams.append("opco", opco);
             url.searchParams.append("name", name);
             url.searchParams.append("state", state);
-            loadShow();
+            //loadShow();
             fetch(url)
               .then((r) => r.json())
               .then(function (data) {
@@ -2014,10 +2014,10 @@
                   option.value = data[i];
                   x.add(option);
                 }
-                loadHide();
+                //loadHide();
               })
               .catch(function (e) {
-                loadHide();
+                //loadHide();
                 alert("No counter is mapped for selection");
               });
           }
@@ -2036,7 +2036,7 @@
             url.searchParams.append("counter", counter);
             document.getElementById("headtext").innerHTML =
               counter + "<br>" + document.getElementById("headtext").innerHTML;
-            loadShow();
+            //loadShow();
             fetch(url)
               .then((r) => r.json())
               .then(function (data) {
@@ -2077,10 +2077,10 @@
                   formrow.appendChild(div1);
                   x.appendChild(formrow);
                 }
-                loadHide();
+                //loadHide();
               })
               .catch(function (e) {
-                loadHide();
+                //loadHide();
                 alert("No brand is mapped for selection");
               });
           }
@@ -2173,18 +2173,18 @@
       for (const key in data) {
         url.searchParams.append(key, data[key]);
       }
-      loadShow();
+      //loadShow();
       document.getElementById("form-register").style.display = "none";
       fetch(url)
         .then((r) => r.json())
         .then(function (data) {
           document.getElementById("output").innerHTML = "Data Submitted";
 
-          loadHide();
+          //loadHide();
           document.getElementById("form-register").style.display = "none";
         })
         .catch(function (e) {
-          loadHide();
+          //loadHide();
           alert("Error Occured while updating");
         });
     },
@@ -2208,7 +2208,7 @@
      * @for defaults
      **/
     onInit: function (event, currentIndex) {
-      loadShow();
+      //loadShow();
       var url1 = geturl.toString() + "?init=init";
       fetch(url1)
         .then((r) => r.json())
@@ -2227,11 +2227,11 @@
             option.value = data[1][i];
             state.add(option);
           }
-          loadHide();
+          //loadHide();
         })
         .catch(function (e) {
           alert("No counter is mapped for selection");
-          loadHide();
+          //loadHide();
         });
     },
 
